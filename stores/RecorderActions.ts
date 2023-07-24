@@ -66,7 +66,7 @@ export const startRecording = async (router: NextRouter) => {
   if (!recorder) {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
-        audio: true,
+        audio: { noiseSuppression: true },
       });
       let options = { mimeType: "audio/webm" };
 
